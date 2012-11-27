@@ -1,12 +1,11 @@
 ### Compatibility
 
-This interpreter will run on mzscheme v372. 
+This interpreter will run on mzscheme v372 and mit-scheme 9.1.1. 
 
 ### Design
 
 I used 2 ideas from Sussman and Abelson's Meta-Circular Evaluator (Structure and Interpretation of Computer Programs): expressing
-the environment as stack/list of frames and using syntactic
-transformations. The first idea is necessary to properly implement the rules of nested defines properly (i.e., you should not be able to redefine a name in your existing scope). The second idea helps to reduce the amount of code necessary to support special forms. Like Sussman and Abelson's interpreter, my interpreter translates `cond` expressions to equivalent `if` expressions. I extend this idea to both `letrec`, `let*`, and even `and` and `or`.
+the environment as stack/list of frames and using syntactic transformations. The first idea is necessary to properly implement the rules of nested defines properly (i.e., you should not be able to redefine a name in your existing scope). The second idea helps to reduce the amount of code necessary to support special forms. Like Sussman and Abelson's interpreter, my interpreter translates `cond` expressions to equivalent `if` expressions. I extend this idea to both `letrec`, `let*`, and even `and` and `or`.
 
 I've also made a conscious effort to limit the number of primitives registered in the global environment; instead, many of
 these procedures can be found in a standalone file called `stdlib.scm`. As such, it may be necessary to load this file before attempting to use any of the normal builtins. Here's a list of the procedures `stdlib.scm` provides:
