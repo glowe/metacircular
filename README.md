@@ -41,7 +41,7 @@ Here's a sample session of how to exercise the interpreter.
     ;; Load stdlib.scm for "list" procedure
     (load "stdlib.scm")
     
-    ;; Define the macro example from the course website
+    ;; Define weird macro
     (define-macro (strange-mult a b) (list '* a (list '- b 1)))
     
     ;; Set up some variables that will be necessary for evaulating our
@@ -60,8 +60,7 @@ Here's a sample session of how to exercise the interpreter.
     ;; Now start the read-eval-printloop
     (repl)
     
-    ;; Load stdlib.scm again, because we're going to test something
-    standalone. Load takes a while (be patient)
+    ;; Load stdlib.scm again, because we're going to test something standalone. Load takes a while (be patient)
     
     (load "stdlib.scm")
     
